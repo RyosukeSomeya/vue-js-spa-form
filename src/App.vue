@@ -1,22 +1,43 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div>
+      <Header></Header>
+      <transition name="fade" mode="out-in">
+        <router-view></router-view>
+      </transition>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Header from './components/Header'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    Header,
   }
 }
 </script>
 
 <style>
+/* style for transition */
+/*
+  .fade-enter 表示開始状態
+  .fade-enter-active 表示中のtransiton状態
+  .fade-enter-to 表示状態 動作完了
+
+  .fade-leave 非表示動作開始状態
+  .fade-leave-active 非表示中のtransiton状態
+  .fade-leave-to 非表示状態 動作完了
+  */
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
+}
+.fade-enter-active,
+.fade-leave-active {
+    transition: opacity 0.3s;
+}
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
