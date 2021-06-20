@@ -28,7 +28,7 @@ export default {
         return {
             gender: 'male',
             baseYear: 1979,
-            birthYear: 1990,
+            birthYear: 2000,
             birthMonth: 1,
             birthDate: 1,
         }
@@ -38,7 +38,7 @@ export default {
             if (birthYear <= 1988) {
                 return '昭和' + (birthYear - 1925);
             } else if (birthYear === 1989) {
-                return '昭和63年/平成元年';
+                return '昭和64/平成元';
             } else if (birthYear >= 1990 && birthYear < 2019) {
                 return '平成' + (birthYear - 1988);
             } else if (birthYear === 2019) {
