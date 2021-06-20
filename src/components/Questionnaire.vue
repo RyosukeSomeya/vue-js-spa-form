@@ -34,8 +34,8 @@
             </div>
             </transition>
         </div>
-        <router-link to="/">前へ戻る</router-link>
-        <router-link to="/consultation">次へ進む</router-link>
+        <router-link to="/" class="button is-primary">前へ戻る</router-link>
+        <router-link to="/consultation" class="button is-primary">次へ進む</router-link>
     </div>
 </template>
 

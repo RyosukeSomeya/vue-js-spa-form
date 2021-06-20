@@ -18,7 +18,7 @@
                 <option v-for="n of 31" :key="n">{{ n }}</option>
             </select>日
         </div>
-        <router-link to="/questionnaire">次へ進む</router-link>
+        <router-link to="/questionnaire" class="button is-primary">次へ進む</router-link>
     </div>
 </template>
 
