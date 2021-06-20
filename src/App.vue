@@ -1,9 +1,11 @@
 <template>
   <div>
       <Header></Header>
+      <form>
       <transition name="fade" mode="out-in">
-        <router-view></router-view>
+      <router-view></router-view>
       </transition>
+      </form>
   </div>
 </template>
 
@@ -15,7 +17,7 @@ export default {
   components: {
     Header,
   }
-}
+};
 </script>
 
 <style>
@@ -35,7 +37,7 @@ export default {
 }
 .fade-enter-active,
 .fade-leave-active {
-    transition: opacity 0.3s;
+    transition: opacity 0.5s;
 }
 
 #app {

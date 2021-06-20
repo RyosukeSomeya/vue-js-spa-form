@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import BasicInfo from './components/BasicInfo'
-import ConsulContent from './components/ConsulContent'
+import Consultation from './components/Consultation'
 import Questionnaire from './components/Questionnaire'
 
 Vue.use(Router)
@@ -20,9 +20,9 @@ export default new Router({
             component: Questionnaire
         },
         {
-            path: '/consul-content',
-            name: 'consulContent',
-            component: ConsulContent
+            path: '/consultation',
+            name: 'consultation',
+            component: Consultation
         },
     ]
 })
