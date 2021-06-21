@@ -1,13 +1,11 @@
 <template>
   <div>
       <Header></Header>
-      <div class="container">
-        <form>
-        <transition name="fade" mode="out-in">
-        <router-view></router-view>
-        </transition>
-        </form>
-      </div>
+      <form class="mt-6">
+      <transition name="fade" mode="out-in">
+      <router-view></router-view>
+      </transition>
+      </form>
   </div>
 </template>
 

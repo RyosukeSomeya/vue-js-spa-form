@@ -1,9 +1,12 @@
 <template>
-    <header class="header">
-        <h1 class="app-title">Sanple Form</h1>
-        <div class="header-menu">
-            <a href="#">ログイン</a>|
-            <a href="#">新規登録</a>
+    <header class="navbar has-background-light box">
+        <h1 class="navbar-brand">
+            <span class="navbar-item">Sanple Form</span>
+        </h1>
+        <div class="navbar-end">
+            <a class="navbar-item" href="#">ログイン</a>
+            <span class="navbar-item">|</span>
+            <a class="navbar-item"  href="#">新規登録</a>
         </div>
     </header>
 </template>
