@@ -63,14 +63,6 @@
 import getJpCalender from '../utils/definition';
 
 export default {
-    data() {
-        return {
-            // baseYear: 1979,
-            // birthYear: 2000,
-            // birthMonth: 1,
-            // birthDate: 1,
-        }
-    },
     computed: {
         gender: {
             get() {
