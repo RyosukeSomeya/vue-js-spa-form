@@ -7,20 +7,20 @@
                 <div class="container p-6">
                     <div class="content">
                         <p class="has-text-success">- 性別 -</p>
-                        <p>{{ getJpGender }}</p>
+                        <p>{{ gender }}</p>
                     </div>
                     <div class="content">
                         <p class="has-text-success mb-1">- 生年月日 -</p>
-                        <p>{{ getBirthDay }}</p>
+                        <p>{{ birthDay }}</p>
                     </div>
-                    <div class="content" v-for="(qustion, index) in getQuestions" :key="qustion">
+                    <div class="content" v-for="(qustion, index) in questions" :key="qustion">
                         <p class="has-text-success">- {{ qustion }} -</p>
-                        <p>{{ getAnswers[index] }}</p>
+                        <p>{{ answers[index] }}</p>
                     </div>
 
                     <div class="content">
                         <p class="has-text-success mb-1">- ご相談内容 -</p>
-                        <p>{{ getConsulContent }}</p>
+                        <p>{{ consulContent }}</p>
                     </div>
                 </div>
             </div>
@@ -36,27 +36,20 @@
 
 <script>
 export default {
-    data() {
-        return {
-            // answer1: this.$store.state.answer1,
-            // answer2: this.$store.state.answer2,
-            // answer3: this.$store.state.answer3,
-        }
-    },
     computed: {
-        getJpGender() {
+        gender() {
             return this.$store.getters.gender;
         },
-        getBirthDay() {
+        birthDay() {
             return this.$store.getters.birthDay;
         },
-        getQuestions() {
+        questions() {
             return this.$store.getters.questions;
         },
-        getConsulContent() {
+        consulContent() {
             return this.$store.getters.cosulContent;
         },
-        getAnswers() {
+        answers() {
             this.mergeAnswers();
             return this.$store.getters.answers;
         }

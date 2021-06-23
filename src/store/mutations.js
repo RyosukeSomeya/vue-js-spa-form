@@ -1,32 +1,32 @@
 // stateのデータの操作を実行する関数
 export default {
     registGender(state, inputData) {
-        state.gender = inputData
+        state.gender = inputData;
     },
     registBirthYear(state, inputData) {
-        state.birthYear = inputData
+        state.birthYear = inputData;
     },
     registBirthMonth(state, inputData) {
-        state.birthMonth = inputData
+        state.birthMonth = inputData;
     },
     registBirthDate(state, inputData) {
-        state.birthDate = inputData
+        state.birthDate = inputData;
     },
     registQuestion1(state, inputData) {
-        state.question1 = inputData
+        state.question1 = inputData;
     },
     registQuestion2(state, inputData) {
-        state.question2 = inputData
+        state.question2 = inputData;
     },
     registQuestion3(state, inputData) {
-        state.question3 = inputData
+        state.question3 = inputData;
     },
     registCosulContent(state, inputData) {
-        state.consultationContent = inputData
+        state.consultationContent = inputData;
     },
     mergeAnswers(state) {
-        state.answers.push(state.question1);
-        state.answers.push(state.question2);
-        state.answers.push(state.question3);
+        state.answers[0] = state.question1;
+        state.answers[1] = state.question2;
+        state.answers[2] = state.question3;
     }
 }
