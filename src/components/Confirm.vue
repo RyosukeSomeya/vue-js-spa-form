@@ -20,7 +20,7 @@
 
                     <div class="content">
                         <p class="has-text-success mb-1">- ご相談内容 -</p>
-                        <p>{{ consulContent }}</p>
+                        <pre>{{ consulContent }}</pre>
                     </div>
                 </div>
             </div>
