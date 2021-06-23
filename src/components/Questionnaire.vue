@@ -23,7 +23,7 @@
                         <div class="control">
                             <p class="has-text-info-dark pb-5">
                                 現在入院中ですか？または、最近3ヶ月以内に医師の診療・診察の結果、
-                                入院・手術を進められたことはありますか
+                                入院・手術を進められたことはありますか？
                             </p>
                             <label class="radio" for="q2-yes">
                                 <input type="radio" id="q2-yes" v-model="question2" value="はい">

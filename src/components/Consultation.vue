@@ -12,7 +12,7 @@
         </div>
         <div class="has-text-centered">
             <router-link to="/questionnaire" class="button is-primary mr-4"><i class="fas fa-angle-left"></i>&nbsp;前へ戻る</router-link>
-            <router-link to="/consultation" class="button is-primary">次へ進む&nbsp;<i class="fas fa-angle-right"></i></router-link>
+            <router-link to="/confirm" class="button is-primary">次へ進む&nbsp;<i class="fas fa-angle-right"></i></router-link>
         </div>
     </div>
 </template>
