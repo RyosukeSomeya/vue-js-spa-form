@@ -17,8 +17,8 @@ export default {
     },
     questions: state => state.questions,
     answers: state => state.answers,
-    question1: state => state.question1,
-    question2: state => state.question2,
-    question3: state => state.question3,
+    answer1: state => state.answer1,
+    answer2: state => state.answer2,
+    answer3: state => state.answer3,
     cosulContent: state => state.consultationContent,
 }

@@ -12,14 +12,14 @@ export default {
     registBirthDate({ commit }, inputData) {
         commit("registBirthDate", inputData);
     },
-    registQuestion1({ commit }, inputData) {
-        commit("registQuestion1", inputData);
+    registAnswer1({ commit }, inputData) {
+        commit("registAnswer1", inputData);
     },
-    registQuestion2({ commit }, inputData) {
-        commit("registQuestion2", inputData);
+    registAnswer2({ commit }, inputData) {
+        commit("registAnswer2", inputData);
     },
-    registQuestion3({ commit }, inputData) {
-        commit("registQuestion3", inputData);
+    registAnswer3({ commit }, inputData) {
+        commit("registAnswer3", inputData);
     },
     registCosulContent({ commit }, inputData) {
         commit("registCosulContent", inputData);

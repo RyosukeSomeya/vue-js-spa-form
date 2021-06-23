@@ -20,9 +20,9 @@ export default new Vuex.Store({
             `過去5年以内に、病気やけがで、手術をうけたことまたは継続して7日以上の
             入院をしたことがありますか？`,
         ],
-        question1: '',
-        question2: '',
-        question3: '',
+        answer1: '',
+        answer2: '',
+        answer3: '',
         answers: [],
         consultationContent: '',
     },

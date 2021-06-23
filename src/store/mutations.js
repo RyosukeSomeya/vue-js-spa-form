@@ -12,21 +12,21 @@ export default {
     registBirthDate(state, inputData) {
         state.birthDate = inputData;
     },
-    registQuestion1(state, inputData) {
-        state.question1 = inputData;
+    registAnswer1(state, inputData) {
+        state.answer1 = inputData;
     },
-    registQuestion2(state, inputData) {
-        state.question2 = inputData;
+    registAnswer2(state, inputData) {
+        state.answer2 = inputData;
     },
-    registQuestion3(state, inputData) {
-        state.question3 = inputData;
+    registAnswer3(state, inputData) {
+        state.answer3 = inputData;
     },
     registCosulContent(state, inputData) {
         state.consultationContent = inputData;
     },
     mergeAnswers(state) {
-        state.answers[0] = state.question1;
-        state.answers[1] = state.question2;
-        state.answers[2] = state.question3;
+        state.answers[0] = state.answer1;
+        state.answers[1] = state.answer2;
+        state.answers[2] = state.answer3;
     }
 }
