@@ -7,13 +7,13 @@
                 <div class="container p-6">
                     <div class="question1 field pb-5">
                         <div class="control">
-                            <p class="has-text-info-dark pb-4">現在、生命保険に加入されていますか？</p>
+                            <p class="has-text-info-dark pb-4">{{ questions[0] }}</p>
                             <label class="radio" for="q1-yes">
-                                <input type="radio" id="q1-yes" v-model="question1" value="はい">
+                                <input type="radio" id="q1-yes" name='question1' v-model="question1" value="はい">
                                 はい
                             </label>
                             <label class="radio" for="q1-no">
-                                <input type="radio" id="q1-no" v-model="question1" value="いいえ">
+                                <input type="radio" id="q1-no" name='question1' v-model="question1" value="いいえ">
                                 いいえ
                             </label>
                         </div>
@@ -21,31 +21,25 @@
                     <transition name="fade" mode="out-in">
                     <div class="question2 field pb-5" v-if="question1">
                         <div class="control">
-                            <p class="has-text-info-dark pb-4">
-                                現在入院中ですか？または、最近3ヶ月以内に医師の診療・診察の結果、
-                                入院・手術を進められたことはありますか？
-                            </p>
+                            <p class="has-text-info-dark pb-4">{{ questions[1] }}</p>
                             <label class="radio" for="q2-yes">
-                                <input type="radio" id="q2-yes" v-model="question2" value="はい">
+                                <input type="radio" id="q2-yes" name='question2' v-model="question2" value="はい">
                             はい</label>
                             <label class="radio" for="q2-no">
-                            <input type="radio" id="q2-no" v-model="question2" value="いいえ">
+                            <input type="radio" id="q2-no" name='question2' v-model="question2" value="いいえ">
                             いいえ</label>
                         </div>
                     </div>
                     </transition>
                     <transition name="fade" mode="out-in">
                     <div class="field question3 pb-5" v-if="question2">
-                        <p class="has-text-info-dark pb-4">
-                            過去5年以内に、病気やけがで、手術をうけたことまたは継続して7日以上の
-                            入院をしたことがありますか？
-                        </p>
+                        <p class="has-text-info-dark pb-4">{{ questions[2] }}</p>
                         <label class="radio" for="q3-yes">
-                            <input type="radio" id="q3-yes" v-model="question3" value="はい">
+                            <input type="radio" id="q3-yes" name='question3' v-model="question3" value="はい">
                             はい
                         </label>
                         <label class="radio" for="q3-no">
-                            <input type="radio" id="q3-no" v-model="question3" value="いいえ">
+                            <input type="radio" id="q3-no" name='question3' v-model="question3" value="いいえ">
                             いいえ
                         </label>
                     </div>
@@ -62,12 +56,36 @@
 
 <script>
 export default {
-    data() {
-        return {
-            question1: '',
-            question2: '',
-            question3: '',
-        }
-    },
+    computed: {
+        questions: {
+            get() {
+                return this.$store.getters.questions;
+            }
+        },
+        question1: {
+            get() {
+                return this.$store.getters.question1;
+            },
+            set(inputData) {
+                this.$store.dispatch('registQuestion1', inputData);
+            }
+        },
+        question2: {
+            get() {
+                return this.$store.getters.question2;
+            },
+            set(inputData) {
+                this.$store.dispatch('registQuestion2', inputData);
+            }
+        },
+        question3: {
+            get() {
+                return this.$store.getters.question3;
+            },
+            set(inputData) {
+                this.$store.dispatch('registQuestion3', inputData);
+            }
+        },
+    }
 }
 </script>

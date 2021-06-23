@@ -19,10 +19,15 @@
 
 <script>
 export default {
-    data() {
-        return {
-            consultationContent: '',
-        }
-    },
+    computed: {
+        consultationContent: {
+            get() {
+                return this.$store.getters.cosulContent;
+            },
+            set(inputData) {
+                this.$store.dispatch('registCosulContent', inputData);
+            }
+        },
+    }
 }
 </script>

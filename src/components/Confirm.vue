@@ -7,33 +7,20 @@
                 <div class="container p-6">
                     <div class="content">
                         <p class="has-text-success">- 性別 -</p>
-                        <p>{{ gender }}</p>
+                        <p>{{ getJpGender }}</p>
                     </div>
                     <div class="content">
                         <p class="has-text-success mb-1">- 生年月日 -</p>
-                        <p>{{ birthDay }}</p>
+                        <p>{{ getBirthDay }}</p>
                     </div>
-                    <div class="content">
-                        <p class="has-text-success">- 現在、生命保険に加入されていますか？ -</p>
-                        <p>{{ answer1 }}</p>
+                    <div class="content" v-for="(qustion, index) in getQuestions" :key="qustion">
+                        <p class="has-text-success">- {{ qustion }} -</p>
+                        <p>{{ getAnswers[index] }}</p>
                     </div>
-                    <div class="content">
-                        <p class="has-text-success">
-                            - 現在入院中ですか？または、最近3ヶ月以内に医師の診療・診察の結果、
-                            入院・手術を進められたことはありますか？ -
-                        </p>
-                        <p>{{ answer2 }}</p>
-                    </div>
-                    <div class="content">
-                    <p class="has-text-success">
-                        - 過去5年以内に、病気やけがで、手術をうけたことまたは継続して7日以上の
-                        入院をしたことがありますか？ -
-                    </p>
-                    <p>{{ answer3 }}</p>
-                    </div>
+
                     <div class="content">
                         <p class="has-text-success mb-1">- ご相談内容 -</p>
-                        <p>{{ consultationContent }}</p>
+                        <p>{{ getConsulContent }}</p>
                     </div>
                 </div>
             </div>
@@ -51,14 +38,34 @@
 export default {
     data() {
         return {
-            gender: this.$store.state.gender,
-            birthDay: '2000年1月1日',
-            answer1: 'はい',
-            answer2: 'いいえ',
-            answer3: 'はい',
-            consultationContent: '相談内容テキスト 相談内容テキスト 相談内容テキスト',
+            // answer1: this.$store.state.answer1,
+            // answer2: this.$store.state.answer2,
+            // answer3: this.$store.state.answer3,
         }
     },
+    computed: {
+        getJpGender() {
+            return this.$store.getters.gender;
+        },
+        getBirthDay() {
+            return this.$store.getters.birthDay;
+        },
+        getQuestions() {
+            return this.$store.getters.questions;
+        },
+        getConsulContent() {
+            return this.$store.getters.cosulContent;
+        },
+        getAnswers() {
+            this.mergeAnswers();
+            return this.$store.getters.answers;
+        }
+    },
+    methods: {
+        mergeAnswers() {
+            this.$store.dispatch('mergeAnswers');
+        }
+    }
 }
 </script>
 
