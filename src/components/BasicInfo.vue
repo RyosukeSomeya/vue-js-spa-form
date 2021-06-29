@@ -9,10 +9,10 @@
                     <div class="field">
                         <div class="control">
                             <label class="radio" for="gender-male">
-                                <input type="radio" id="gender-male" v-model="gender" value="male">
+                                <input type="radio" id="gender-male" name="gender" v-model="gender" value="male">
                             男性</label>
                             <label class="radio" for="gender-female">
-                                <input type="radio" id="gender-female" v-model="gender" value="female">
+                                <input type="radio" id="gender-female" name="gender" v-model="gender" value="female">
                             女性</label>
                         </div>
                     </div>
@@ -63,14 +63,44 @@
 import getJpCalender from '../utils/definition';
 
 export default {
-    data() {
-        return {
-            gender: 'male',
-            baseYear: 1979,
-            birthYear: 2000,
-            birthMonth: 1,
-            birthDate: 1,
-        }
+    computed: {
+        gender: {
+            get() {
+                return this.$store.getters.gender
+            },
+            set(inputData) {
+                this.$store.dispatch('registGender', inputData);
+            }
+        },
+        baseYear: {
+            get() {
+                return this.$store.getters.baseYear;
+            },
+        },
+        birthYear: {
+            get() {
+                return this.$store.getters.birthYear;
+            },
+            set(inputData) {
+                this.$store.dispatch('registBirthYear', inputData);
+            }
+        },
+        birthMonth: {
+            get() {
+                return this.$store.getters.birthMonth;
+            },
+            set(inputData) {
+                this.$store.dispatch('registBirthMonth', inputData);
+            }
+        },
+        birthDate: {
+            get() {
+                return this.$store.getters.birthDate;
+            },
+            set(inputData) {
+                this.$store.dispatch('registBirthDate', inputData);
+            }
+        },
     },
     methods: {
         getJpCalender,
